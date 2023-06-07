@@ -37,8 +37,8 @@ function forminator_mu_paypal_description_from_path( $request, $data ) {
         // capitalize words in description
         $description = ucwords(strtolower($description));         
 
-        // cut description at 400 characters max  
-        $description = substr( $description, 0, 400 );        
+        // cut description at 127 characters max, per spec at https://developer.paypal.com/docs/api/orders/v2/
+        $description = substr( $description, 0, 127 );        
 
     }
 
