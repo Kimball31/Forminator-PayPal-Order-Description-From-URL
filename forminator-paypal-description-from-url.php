@@ -5,7 +5,7 @@
 * Plugin URI: https://kimballrexford.com/
 * Author: Kimball Rexford
 * Author URI: https://kimballrexford.com/
-* Version: 0.1
+* Version: 0.2
 * License: GPLv2 or later
 * Readme: To install copy file to /wp-content/mu-plugins/ folder
 */
@@ -35,12 +35,12 @@ function forminator_mu_paypal_description_from_path( $request, $data ) {
         $description = trim( preg_replace( '/\s+/', ' ', $description ) ); 
 
         // capitalize words in description
-        $description = ucwords(strtolower($description));         
-
-        // cut description at 127 characters max, per spec at https://developer.paypal.com/docs/api/orders/v2/
-        $description = substr( $description, 0, 127 );        
+        $description = ucwords( strtolower( $description ) );            
 
     }
+    
+    // cut description at 127 characters max, per spec at https://developer.paypal.com/docs/api/orders/v2/
+    $description = substr( $description, 0, 127 );         
 
     // set paypal description 
     $request['purchase_units'][0]['description'] = $description;     
