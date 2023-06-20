@@ -40,7 +40,9 @@ function forminator_mu_paypal_description_from_path( $request, $data ) {
     }
     
     // cut description at 127 characters max, per spec at https://developer.paypal.com/docs/api/orders/v2/
-    $description = substr( $description, 0, 127 );         
+    if( strlen( $description ) > 127 ) {
+        $description = substr( $description, 0, 127 );     
+    }        
 
     // set paypal description 
     $request['purchase_units'][0]['description'] = $description;     
