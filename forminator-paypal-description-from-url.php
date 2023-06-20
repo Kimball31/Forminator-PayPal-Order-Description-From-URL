@@ -2,7 +2,7 @@
 /**
 * Plugin Name: [Forminator] - PayPal Order Description From URL.
 * Description: Add description to PayPal Transaction based on form url.
-* Plugin URI: https://kimballrexford.com/
+* Plugin URI: https://github.com/Kimball31/Forminator-PayPal-Order-Description-From-URL
 * Author: Kimball Rexford
 * Author URI: https://kimballrexford.com/
 * Version: 0.2
